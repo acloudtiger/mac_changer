@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import time
+import sys
 
 import scapy.all as scapy
 
@@ -28,5 +29,7 @@ while True:
     spoof("192.168.154.143", "192.168.154.2")
 
     send_packets_count = send_packets_count + 2
-    print("[+] Packets send : " + str(send_packets_count))
+    print("\r[+] Packets send : " + str(send_packets_count)),
+    # print("\r[+] Packets send : " + str(send_packets_count), end="")    ==> python3
+    sys.stdout.flush()
     time.sleep(2)
