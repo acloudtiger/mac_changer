@@ -6,3 +6,10 @@ iptables -I FORWARD -j NFQUEUE --queue-num 0
 
 ---recovery---
 iptables --flush
+
+
+=============================
+test on local machine
+
+iptables -I INPUT -j NFQUEUE --queue-num 0
+iptables -I OUTPUT -j NFQUEUE --queue-num 0
